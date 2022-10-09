@@ -1,0 +1,45 @@
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 100vh;
+  }
+}
+
+.top-nav-collapse {
+  background-color: #635147 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #635147 !important;
+  }
+}
+
+h1 {
+  letter-spacing: 8px;
+  color: #F5F5DC;
+}
+
+h5 {
+  letter-spacing: 3px;
+  color:#F5F5DC;
+
+}
+
+.hr-light {
+  border-top: 2px solid #fff;
+  width: 300px;
+}

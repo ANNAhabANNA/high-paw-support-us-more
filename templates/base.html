@@ -13,85 +13,120 @@
 
     {% block corecss %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    {% endblock %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
+        <script src="https://kit.fontawesome.com/abebfafba8.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     {% endblock %}
 
     {% block extra_js%}
+    
     {% endblock %}
 
     <title>High Paw {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-
-    <header class="container-fluid fixed-top">
-      <div class="row">
-        <div class="col-12 col-lg-3 my-auto py-2 py-lg-1 text-center text-lg-left">
-          <a href="{% url 'home' %}" class="nav-link main-logo-link">
-            <h3 class="logo-font text-purple my-1 text-capitalize"><strong>High Paw</strong></h3>
-          </a>
-        </div>
-        <div class="col-12 col-lg-3 my-auto py-2 py-lg-1">
-          <form method="GET" action="">
-            <div class="input-group w-100">
-              <input class="form-control border border-block rounded-1" type="text" name="q" placeholder="Find a Wagging Tail">
-              <div class="input-group-prepend">
-                <button class="form-control btn btn-black border border-black rounded-1" type="submit">
-                  <span class="input-group-text" id="icon"><i class="fas fa-search"></i>
-                  </span>
-                </button>
-              </div>
-              <input type="text" class="form-control" placeholder="Breed" aria-label="Breed" aria-describedby="basic-addon1">
-            </div>
-          </form>
-        </div>
-        <div class="col-12 col-lg-3 my-auto py-2 py-lg-1">
-          <ul class="list-inline list-unstyled text-center text-lg-right my-1">
-            <li class="list-inline-item dropdown">
-              <a class="text-purple nav-link" href="#" id="user-choice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <header>
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
                 <div class="text-center">
-                    <div><i class="fas fa-duotone fa-user fa-lg"></i></div>
-                    <p class="my-1">My Account</p>
+                  <div><i class="fa-solid fa-paw-simple"></i>
+                  </div>
+                  <p class="my-1">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                  </p>
                 </div>
-            </a>
-            <div class="dropdown-menu border-1" aria-labelledby="user-choice">
-              {% if request.user.is_authenticated %}
-                  {% if request.user.is_superuser %}
-                      <a href="" class="dropdown-item">Support Activity Management</a>
-                  {% endif %}
-                  <a href="" class="dropdown-item">My Profile</a>
-                  <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-              {% else %}
-                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-              {% endif %}
-          </div>
-            </li>
-            <li class="list-inline-item">
-              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-purple{% endif %} nav-link" href="">
-                <div class="text-center">
-                    <div><i class="fas fa-solid fa-paw-simple"></i></div>
-                    <p class="my-1">
+              </li>
+              <li class="nav-item">
+                <li class="list-inline-item dropdown">
+                  <a class="text-purple nav-link" href="#" id="user-choice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="text-center">
+                      <div><i class="fas fa-duotone fa-user fa-lg"></i>
+                      </div>
+                      <p class="my-1">My Account</p>
+                    </div>
+                  </a>
+                  <div class="dropdown-menu border-1" aria-labelledby="user-choice">
+                    {% if request.user.is_authenticated %}
+                      {% if request.user.is_superuser %}
+                        <a href="" class="dropdown-item">Support Activity Management</a>
+                      {% endif %}
+                        <a href="" class="dropdown-item">My Profile</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                      {% else %}
+                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    {% endif %}
+                  </div>
+                </li>
+                <li class="list-inline-item">
+                  <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                    <div class="text-center">
+                      <i class="fas fa-bone fa-lg"></i>
+                      <p class="my-0">
                         {% if grand_total %}
                             {{ grand_total|floatformat:2 }}
                         {% else %}
                             0.00
                         {% endif %}
-                    </p>
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              </li>
+            </ul>
+            <div class="col-12 col-lg-4 my-auto py-0 py-lg-0">
+              <form method="GET" action="">
+                <div class="input-group">
+                  
+                  <div class="input-group mb-3">
+                    <input class="form-control border border-block rounded-1" type="text" name="q" placeholder="Find a Wagging Tail">
+                    <div class="input-group-append"><button class="btn btn-warning"><i class="fas fa-search"></i></button></div>
+                  </div>
+                  </div>
                 </div>
-            </a>
-            </li>
-          </ul>
+              </form>
+            </div>
+          </div>
         </div>
+      </nav>
+      <div class="view" style="background-image: url('/media/dog-paw-human-hand.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+          <div class="container d-flex h-100">
+           
+            <div class="col text-center justify-content-center align-self-center">
+           
+              <div class="col-md-12 mb-4 white-text text-center">
+                
+                  <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5"><strong>High Paw</strong></h1>
+                  <hr class="hr-light my-4">
+                  <h5 class="text-uppercase mb-4 white-text"><strong>Support our work of saving dogs' lives</strong></h5>
+                  <a href="#" class="btn btn-warning btn-lg" role="button">Support Now</a>
+              </div>
+            
+            </div>
+          </div>
       </div>
     </header>
+
+    
 
     {% if messages %}
         <div class="message-container"></div>
