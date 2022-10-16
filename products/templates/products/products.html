@@ -1,20 +1,60 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+
 {% endblock %}
 
+
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                {{ products }}
+<div class="m-4">
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="img-fluid rounded card-img-top" src="{% static 'media/dog-feeding.jpg' %}" alt="A small dos is eating from a bowl placed on the lawn.">
+                        <h5 class="card-title text-uppercase text-dark">Feed A Dog For A Month</h5>
+                        <a href="#" class="btn btn-warning btn-lg" role="button">Support Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="img-fluid rounded card-img-top" src="{% static 'media/dog-vet.jpg' %}" alt="A dog is being hold by a vet in the animal care center.">
+                        <h5 class="card-title text-uppercase text-dark">Clean Bill of Health</h5>
+                        <a href="#" class="btn btn-warning btn-lg" role="button">Support Now</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="m-4">
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="img-fluid rounded card-img-top" src="{% static 'media/flea-worm-treatment.jpg' %}" alt="A dog is being hold by two people who are administering medicine">
+                        <h5 class="card-title text-uppercase text-dark">Flea and Worm Treatment</h5>
+                        <a href="#" class="btn btn-warning btn-lg" role="button">Support Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="img-fluid rounded card-img-top" src="{% static 'media/visit-to-school.jpeg' %}" alt="A dog is petted by children's hands.">
+                        <h5 class="card-title text-uppercase text-dark">Educational Visit to School</h5>
+                        <a href="#" class="btn btn-warning btn-lg" role="button">Support Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
