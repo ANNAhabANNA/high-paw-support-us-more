@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet');
+
+
+body {
+
+  font-family: 'Raleway', sans-serif !important;
+  background-image: url('../static/media/dog-paw-human-hand.jpg'); 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: 20% 30%;;
+
+}
+
+.content-container {
+  margin-top: 200px;
+}
+
+.card{
+  margin: 5% 0%;
+}
+
+.card-body {
+  margin: 0% 0% 0% 3%;
+  padding: 6% 6%;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 55vh;
+  object-fit: cover;
+}
+
+.top-nav-collapse {
+  background-color: #635147 !important;
+}
+
+
+.navbar {
+    background-color: #635147 !important;
+}
+
+
+h1 {
+  letter-spacing: 8px;
+  color: #F5F5DC;
+}
+
+h5 {
+  letter-spacing: 3px;
+  color:#F5F5DC;
+
+}
+
+.hr-light {
+  border-top: 2px solid #fff;
+  width: 300px;
+}
+
