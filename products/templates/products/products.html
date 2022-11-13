@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <img class="img-fluid rounded card-img-top" src="{% static 'media/dog-feeding.jpg' %}" alt="A small dos is eating from a bowl placed on the lawn.">
                         <h5 class="card-title text-uppercase text-dark">Feed A Dog For A Month</h5>
-                        <form class="form" action="#" method="POST">
+                        <form class="form" action="{% url 'add_to_bag' 1 %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row">
                                 <div class="col-12">
@@ -41,7 +41,7 @@
                     <div class="card-body">
                         <img class="img-fluid rounded card-img-top" src="{% static 'media/dog-vet.jpg' %}" alt="A dog is being hold by a vet in the animal care center.">
                         <h5 class="card-title text-uppercase text-dark">Clean Bill of Health</h5>
-                        <form class="form" action="#" method="POST">
+                        <form class="form" action="{% url 'add_to_bag' 2 %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row">
                                 <div class="col-12">
@@ -73,7 +73,7 @@
                     <div class="card-body">
                         <img class="img-fluid rounded card-img-top" src="{% static 'media/flea-worm-treatment.jpg' %}" alt="A dog is being hold by two people who are administering medicine">
                         <h5 class="card-title text-uppercase text-dark">Flea and Worm Treatment</h5>
-                        <form class="form" action="#" method="POST">
+                        <form class="form" action="{% url 'add_to_bag' 3 %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row">
                                 <div class="col-12">
@@ -98,7 +98,7 @@
                     <div class="card-body">
                         <img class="img-fluid rounded card-img-top" src="{% static 'media/visit-to-school.jpeg' %}" alt="A dog is petted by children's hands.">
                         <h5 class="card-title text-uppercase text-dark">Educational Visit to School</h5>
-                        <form class="form" action="#" method="POST">
+                        <form class="form" action="{% url 'add_to_bag' 4 %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row">
                                 <div class="col-12">

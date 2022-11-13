@@ -12,4 +12,14 @@ def all_products(request):
     }
 
     return render (request, 'products/products.html', context)
+
+def product_detail(request, **kwargs):
+    """ A view to show individual product details """
+    pk = kwargs.get("pk")
+    product = get_object_or_404(Product, id=pk)
+
+    context = {
+        'product': product,
+    }
+
   
