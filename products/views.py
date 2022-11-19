@@ -21,5 +21,3 @@ def product_detail(request, **kwargs):
     context = {
         'product': product,
     }
-
-  
