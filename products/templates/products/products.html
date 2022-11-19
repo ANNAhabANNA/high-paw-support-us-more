@@ -13,7 +13,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <img class="img-fluid rounded card-img-top" src="{% static 'media/dog-feeding.jpg' %}" alt="A small dos is eating from a bowl placed on the lawn.">
+                        <img class="img-fluid rounded card-img-top" src="{{ product.image.url }}" alt="A small dos is eating from a bowl placed on the lawn.">
                         <h5 class="card-title text-uppercase text-dark">{{product.name}}</h5>
                         <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                             {% csrf_token %}
@@ -27,8 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <input type="submit" class="btn btn-warning btn-lg" role="button" value="Add to Bag">
-                                    <a class="btn btn-warning btn-lg" href="#">View</a>
+                                    <a class="btn btn-warning btn-lg" href="{% url 'product_detail' product.id %}">View</a>
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>

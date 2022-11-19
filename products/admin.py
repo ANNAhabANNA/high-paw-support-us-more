@@ -6,6 +6,7 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'price',
         'image',
+        'description',
     )
 
 admin.site.register(Product, ProductAdmin)

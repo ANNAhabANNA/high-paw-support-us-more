@@ -35,19 +35,32 @@
             <div class="card rounded-3 mb-4">
                 <div class="card-body p-4">
                     <div class="row d-flex justify-content-between align-items-center">
-                        
-							<h3>Order Summary</h3>
-							<hr>
-							<div class="cart-row">
-								<div style="flex:2"><img class="row-image" src="#"></div>
-								<div style="flex:2"><p>Product 1</p></div>
-								<div style="flex:1"><p>$20.00</p></div>
-								<div style="flex:1"><p>x2</p></div>
-							</div>
-							
-							<h5>Items:   2</h5>
-							<h5>Total:   $4</h5>
-						</div>
+                        <h3>Order Summary</h3>
+                        <hr>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex mb-2">
+                                        <div class="flex-shrink-0 p-2">
+                                            <img src="#" alt="" width="35" class="img-fluid">
+                                        </div>
+                                        <div class="flex-lg-grow-1 ms-3">
+                                            <h6 class="small mb-0">Support Dog 1</h6>
+                                        </div>
+                                        </div>
+                                    </td>
+                                    <td>1</td>
+                                    <td class="text-end">79.99</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="fw-bold">
+                                    <td colspan="2">TOTAL</td>
+                                    <td class="text-end">169,98</td>
+                                </tr>
+                            </tfoot>
+                        </table>	
                     </div>
                 </div>
             </div>
