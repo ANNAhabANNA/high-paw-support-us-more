@@ -81,13 +81,14 @@
                     {% endif %}
                   </div>
                 </li>
+                
                 <li class="list-inline-item">
-                  <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'review_bag' %}">
+                  <a class="nav-link" href="{% url 'review_bag' %}">
                     <div class="text-center">
                       <i class="fas fa-bone fa-lg"></i>
-                      <p class="my-0">
-                        {% if grand_total %}
-                            {{ grand_total|floatformat:2 }}
+                      <p class="{% if total %}text-warning font-weight-bold{% else %}text-black{% endif %}my-0">
+                        {% if total %}
+                            {{ total|floatformat:2 }}
                         {% else %}
                             0.00
                         {% endif %}
@@ -113,13 +114,8 @@
       </nav>
     </header>
 
-    {% if messages %}
-        <div class="message-container"></div>
-    {% endif %}
-
-
-  
     {% block content %}
+ 
     {% endblock content %}
     
     
