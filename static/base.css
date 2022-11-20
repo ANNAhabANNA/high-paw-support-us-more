@@ -56,3 +56,9 @@ h5 {
   width: 300px;
 }
 
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
