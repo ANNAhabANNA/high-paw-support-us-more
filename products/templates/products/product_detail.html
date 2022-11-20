@@ -15,6 +15,7 @@
                     <div class="col-md-12 p-2">
                         <img class="img-fluid rounded card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
                         <h5 class="card-title text-uppercase text-dark">{{product.name}}</h5>
+                        <p class="card-title  text-dark">{{product.description}}</p>
                         
                     </div>
                     <div class="col-md-12">
@@ -41,7 +42,7 @@
                                             <span class="text-uppercase">Keep Shopping</span>
                                         </a>
                                     
-                                        <input type="submit" class="btn btn-warning btn-lg" role="button" value="Add to Bag">
+                                        <button data-product="{{product.id}}" data-action="add" class="btn btn-warning btn-lg update-cart">Add to Bag</button>
                                     </div>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
