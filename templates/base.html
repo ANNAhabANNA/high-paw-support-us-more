@@ -32,7 +32,11 @@
     {% endblock %}
 
     {% block extra_js%}
-    
+
+    <script type="text/javascript">
+      var user = '{{request.user}}'
+    </script>
+
     {% endblock %}
 
     <title>High Paw {% block extra_title %}{% endblock %}</title>
