@@ -62,3 +62,20 @@ h5 {
     cursor: pointer;
 }
 
+/* Bootstrap toasts */
+.message-container {
+  position: fixed;
+  top: 72px;
+  right: 15px;
+  z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+    width: 20rem;
+}
+
+.toast-capper {
+  height: 2px;
+}
+
