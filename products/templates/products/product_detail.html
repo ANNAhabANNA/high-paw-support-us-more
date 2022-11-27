@@ -13,7 +13,11 @@
             <div class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-12 p-4">
-                        <img class="img-fluid rounded card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% if product.image %}
+                        <img class="img-fluid rounded card-img-top" src="{{ product.image.url }}" alt="{{ product.description }}">
+                        {% else %}
+                        <img class="img-fluid rounded card-img-top" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.description }}">
+                        {% endif %}
                         <h5 class="card-title text-uppercase text-dark pt-4">{{product.name}}</h5>
                         <p class="card-title  text-dark">{{product.description}}</p>
                         
