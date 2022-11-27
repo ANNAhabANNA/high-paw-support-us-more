@@ -14,9 +14,9 @@
                 <div class="card">
                     <div class="card-body">
                         {% if product.image %}      
-                        <img class="img-fluid rounded card-img-top" src="{{ product.image.url }}" alt="{{ product.description }}">
+                            <img class="img-fluid rounded card-img-top" src="{{ product.image.url }}" alt="{{ product.description }}">
                         {% else %}
-                        <img class="img-fluid rounded card-img-top" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.description }}">
+                            <img class="img-fluid rounded card-img-top" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.description }}">
                         {% endif %}
                         <h5 class="card-title text-uppercase text-dark">{{product.name}}</h5>
                         <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -29,6 +29,12 @@
                             </div>
                         </form>
                     </div>
+                    {% if request.user.is_superuser %}
+                        <small class="ml-3">
+                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </small>
+                    {% endif %}
                 </div>
             </div>
            {% endfor %}
